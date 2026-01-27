@@ -1,4 +1,21 @@
 ---
-title: "Bandit Wargame 11-20 Walkthrough"
+title: "Bandit Wargame 10-20 Walkthrough"
 date: 2026-01-27
 ---
+
+Bandit10: 
+  A simple base64 encoded message that needed to be decoded
+
+```
+bandit10@bandit:~$ ls
+data.txt
+bandit10@bandit:~$ cat data.txt 
+VGhlIHBhc3N3b3JkIGlzIGR0UjE3M2ZaS2IwUlJzREZTR3NnMlJXbnBOVmozcVJyCg==
+bandit10@bandit:~$ base64 -d data.txt 
+The password is dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+bandit10@bandit:~$ 
+```
+
+Bandit11:
+  Again, I could write a program that solves rot13 cipher. But then what use does the god-given internet have for us?
+The password is 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
