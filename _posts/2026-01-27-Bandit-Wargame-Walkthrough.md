@@ -59,3 +59,39 @@ bandit1@bandit:~$ cat ./-
 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
 ```
 And we have the next level password.
+
+
+Bandit2:
+Again using "ls" shows us a file called "--spaces in this filename--". To open this kind of file there's two solutions. First you can use quotation marks as such:
+```
+bandit2@bandit:~$ cat "--spaces in this filename--"
+MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+```
+(As of 2026, this method is no longer working)
+
+
+Or the more sophisticated option of adding a backslash before every space. This tells the terminal to ignore the (special character) after the slash.
+```
+bandit2@bandit:~$ cat ./--spaces\ in\ this\ filename-- 
+MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+```
+Bandit3:
+Adding a dot before a file name in linux makes it so that the file isn't normally viewed by the usual ls. So to be more thorough we add the switches "-la"
+A quick man search tells us that -l is for long listing format. It basically shows the permission the file has and the owner/users it belongs to, etc.
+-a is for all. That means (you guessed it) showing all files. even the hidden ones.
+
+```
+bandit3@bandit:~$ ls
+inhere
+bandit3@bandit:~$ cd inhere
+bandit3@bandit:~/inhere$ ls -la
+total 12
+drwxr-xr-x 2 root    root    4096 Oct 14 09:26 .
+drwxr-xr-x 3 root    root    4096 Oct 14 09:26 ..
+-rw-r----- 1 bandit4 bandit3   33 Oct 14 09:26 ...Hiding-From-You
+bandit3@bandit:~/inhere$ cat ./...Hiding-From-You 
+2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+bandit3@bandit:~/inhere$ 
+```
+
+We learned how to open files that begin with a special character. This should be easy for you.
