@@ -33,7 +33,8 @@ bandit0. boom. we're in.
 
 Running a very simple two commands to list the files and open the file we found gets us the password to the next level
 
-```bandit0@bandit:~$ ls
+```
+bandit0@bandit:~$ ls
 readme
 bandit0@bandit:~$ cat readme
 Congratulations on your first steps into the bandit game!!
