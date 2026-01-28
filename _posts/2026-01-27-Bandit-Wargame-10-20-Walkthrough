@@ -1,6 +1,6 @@
 ---
 title: "Bandit Wargame 10-20 Walkthrough"
-date: 2026-01-27
+date: 2026-01-28
 ---
 
 Bandit10: 
@@ -244,4 +244,21 @@ Run a command as another user.
   Example: ./bandit20-do whoami
 bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+```
+
+Bandit20: 
+  Ugh, my computer crashed and I need to write this again. Can't you just trust that I really did do it and move on? Ugh, fine. I'll solve it.
+At this point of time I realized that I am out of my depth and I needed to take a break and watch some tutorials. Which I did. Then I came back stronger
+heheheehe. Anyways. I set up a netcat listener and echoed this level's password through it:
+```
+bandit20@bandit:~$ echo "0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO" | nc -l -p 1234 &
+[1] 19
+```
+And then connected to this port using the setuid binary and got back the next level's password:
+```
+bandit20@bandit:~$ ./suconnect 1234
+Read: 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+Password matches, sending next password
+EeoULMCra2q0dSkYj561DX7s1CpBuOBt
+[1]+  Done                   
 ```
